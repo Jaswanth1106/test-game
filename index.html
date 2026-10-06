@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101b29" />
+  <meta name="description" content="Skyfall Arena: an original single-player 3D survival arena prototype." />
+  <title>Skyfall Arena</title>
+</head>
+<body>
+  <div id="game" aria-label="3D game viewport"></div>
+  <div id="vignette"></div><div id="damage-flash"></div>
+  <main id="menu" class="overlay">
+    <section class="panel">
+      <div class="eyebrow">ORIGINAL BROWSER PROTOTYPE · SOLO VS BOTS</div>
+      <h1>SKYFALL<span>ARENA</span></h1>
+      <p class="intro">One island. Twelve rivals. A closing storm.<br>Build your cover. Find your final shot.</p>
+      <div class="settings">
+        <label for="quality">Graphics</label>
+        <select id="quality"><option value="high">High · shadows + bloom</option><option value="low">Performance</option></select>
+      </div>
+      <button id="play" type="button" disabled>Loading island…</button>
+      <p id="menu-status" role="status">Preparing the renderer</p>
+      <div class="controls">
+        <div><kbd>W A S D</kbd> Move · <kbd>Shift</kbd> Sprint</div>
+        <div><kbd>Space</kbd> Jump · Mouse to look</div>
+        <div><kbd>LMB</kbd> Fire · <kbd>RMB</kbd> Aim · <kbd>R</kbd> Reload</div>
+        <div><kbd>Q</kbd> Wall · <kbd>E</kbd> Ramp · <kbd>F</kbd> Rotate</div>
+        <div><kbd>LMB</kbd> Place build · <kbd>Esc</kbd> Pause</div>
+      </div>
+      <small>Desktop keyboard + mouse · WebGL 2 required · No login or multiplayer</small>
+    </section>
+  </main>
+  <section id="hud" aria-label="Game status" hidden>
+    <header class="topbar"><div class="brand">SKYFALL <span>ARENA</span></div><div id="storm-label">STORM FORMING</div><div class="counters"><span id="alive">13 ALIVE</span><span id="kills">0 ELIMS</span></div></header>
+    <div class="map-card"><canvas id="minimap" width="180" height="180" aria-label="Minimap showing player, bots, and safe zone"></canvas><span>N ↑ · SAFE ZONE</span></div>
+    <div id="crosshair"><i></i><b></b></div><div id="hitmarker">×</div>
+    <div id="notice" role="status"></div>
+    <footer class="bottom-hud">
+      <div class="vitals"><div class="bar-label">SHIELD <span id="shield-value">50</span></div><div class="bar"><div id="shield-fill"></div></div><div class="bar-label">HEALTH <span id="health-value">100</span></div><div class="bar"><div id="health-fill"></div></div></div>
+      <div class="loadout"><div id="mode-label">PULSE RIFLE</div><strong id="ammo">30 <span>/ 180</span></strong><div id="materials">MATERIALS 180</div></div>
+    </footer>
+    <div class="hotkeys">Q WALL · E RAMP · F ROTATE · R RELOAD · ESC PAUSE</div>
+  </section>
+  <noscript>This game requires JavaScript enabled in a desktop browser.</noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
